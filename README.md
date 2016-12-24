@@ -9,4 +9,5 @@ Installation
 
 Only tested in xfce4 desktop.
 
-bash slap-atom-theme.sh
+cd slap-atom-theme
+bash install.sh
