@@ -1,0 +1,145 @@
+; This is your customizable slap configuration. Defaults are located here:
+; https://github.com/slap-editor/slap/blob/master/slap.ini
+; https://github.com/slap-editor/editor-widget/blob/master/editor-widget.ini
+; https://github.com/slap-editor/base-widget/blob/master/base-widget.ini
+; https://github.com/slap-editor/slap-clipboard-plugin/blob/master/slap-clipboard-plugin.ini
+
+; This is the default slap configuration. You can override these settings in
+; ~/.slap/config.
+
+;;;;;;;;;;;;
+; Settings ;
+;;;;;;;;;;;;
+[header]
+messageDuration = 5000
+blinkRate = 500
+headerPosition = "top"
+
+[fileBrowser]
+width = 30
+
+[logger]
+level = "info"
+
+;;;;;;;;;;;;
+; Bindings ;
+;;;;;;;;;;;;
+[bindings]
+new = "C-n"
+open = "C-o"
+nextPane = "C-M-pagedown"
+prevPane = "C-M-pageup"
+togglePaneList = "C-l"
+toggleFileBrowser = "f10"
+quit = "C-q"
+help = "f2"
+
+[pane.bindings]
+close = "C-w"
+
+[paneList.bindings]
+cancel = "escape"
+
+[editorPane.bindings]
+saveAs = "C-s"
+; Unfortunately, "C-S-s" is picked up as "C-s", and "C-M-s" isn't picked up at
+; all, so a user-friendly binding for promptless save is impossible. Uncomment
+; the following lines for an alternative binding for promptless save:
+;save = "C-s"
+;saveAs = "M-S-s"
+find = "C-f"
+goLine = "C-g"
+
+[form.bindings]
+cancel = "escape"
+
+[form.baseFind.bindings]
+next[] = "enter"
+next[] = "down"
+prev[] = "up"
+; These don't work in most terminal emulators
+prev[] = "S-enter"
+prev[] = "M-enter"
+prev[] = "C-enter"
+
+[dialog.bindings]
+hide = "escape"
+
+;;;;;;;;;;
+; Styles ;
+;;;;;;;;;;
+
+; Available styles:
+; bold, underline, blink, inverse, invisible, (light)black, (light)red,
+; (light)green, (light)yellow, (light)blue, (light)magenta, (light)cyan,
+; (light)white
+
+[header.style]
+bg = "blue"
+info = "{blue-bg}{white-fg}"
+success = "{green-bg}{white-fg}"
+warning = "{yellow-bg}{black-fg}"
+error = "{red-bg}{white-fg}"
+blinkStyle = "{inverse}"
+overwrite = "{red-bg}{white-fg}"
+
+[header.messageContent.style]
+blink = true
+
+[form.style]
+bg = "black"
+bold = true
+
+[editor.style]
+comment = "{blue-bg}{yellow-fg}"
+
+[fileBrowser]
+selectedBg = "cyan"
+bg = "cyan"
+fg = "white"
+bold = true
+
+
+[pane.style]
+bg = "black"
+changed = "{yellow-fg}{bold}"
+
+[paneList.style]
+bg = "black"
+paneList = "{black-bg}"
+
+
+[paneList.list]
+bg = "black"
+selectedBg = "cyan"
+
+[button.style]
+bg = "white"
+fg = "black"
+bold = true
+
+[button.style.hover]
+bg = "lightblue"
+fg = "white"
+
+[button.success.style.hover]
+bg = "green"
+
+[button.warning.style.hover]
+bg = "yellow"
+
+[button.danger.style.hover]
+bg = "red"
+
+;;;;;;;;;;;;;;;;;;;;;;
+; Performance tweaks ;
+;;;;;;;;;;;;;;;;;;;;;;
+[perf]
+profile = false
+
+[form.find.perf]
+findThrottle = 150
+
+[screenOpts]
+smartCSR = true
+fullUnicode = false
